@@ -8,6 +8,7 @@ public class Main {
         kuzibin.enrollCourse("Human Computer Interaction");
         kuzibin.enrollCourse("Operating System");
 
-        kuzibin.calcGPA();
+//        kuzibin.calcGPA();
+        kuzibin.calcCGPA();
     }
 }

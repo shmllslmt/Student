@@ -124,6 +124,26 @@ public class Student {
 
         gpa = totalpoint / (subjects.size()*3);
 
-        System.out.println(name + " GPA is " + gpa);
+        System.out.println(name + "'s GPA is " + gpa);
+    }
+
+    // Find the average of all GPA that you have received so far
+    public void calcCGPA() {
+        Scanner input = new Scanner(System.in);
+        int sem;
+        double gpa = 0.0;
+        double cgpa = 0.0;
+
+        // Prompt user how many semesters have they passed? 6
+        System.out.println("Hello, how many semesters have you passed? ");
+        sem = input.nextInt();
+
+        for(int i = 0; i < sem; i++) {
+            System.out.println("What is your GPA for Sem " + (i+1) + "? ");
+            gpa += input.nextDouble();
+        }
+        cgpa = gpa / sem;
+
+        System.out.println(name + "'s CGPA is " + String.format("%.2f", cgpa));
     }
 }
