@@ -102,44 +102,101 @@ public class Student {
         subjects.remove(subject);
     }
 
+//    public void calcGPA() {
+//        Scanner input = new Scanner(System.in);
+//        int marks;
+//        float totalPoint = 0;
+//
+//        for (String s : subjects) {
+//            System.out.println("What is the marks that you received for " + s + "?");
+//            marks = input.nextInt();
+//
+//            if (marks >= 80 && marks <= 100) {
+//                totalPoint += (4.0 * 3);
+//            } else if (marks >= 60 && marks <= 79) {
+//                totalPoint += (3.0 * 3);
+//            } else if (marks >= 50 && marks <= 59) {
+//                totalPoint += (2.0 * 3);
+//            } else if (marks >= 40 && marks <= 49) {
+//                totalPoint += (1.0 * 3);
+//            } else {
+//                totalPoint += 0.0;
+//            }
+//        }
+//
+//        gpa = totalPoint / (subjects.size() * 3);
+//
+//        System.out.println(name + "'s GPA is " + String.format("%.2f", gpa));
+//    }
+
     public void calcGPA() {
         Scanner input = new Scanner(System.in);
-        String grade;
+        int marks;
+        String grade = "F";
         float totalpoint = 0;
-        float gpa = 0;
 
         for(String s: subjects) {
             // Prompt user for the grades that they received for each subjects
-            System.out.println("What is the grade that you received for " + s + "?");
-            grade = input.next();
+            System.out.println("What is the marks that you received for " + s + "?");
+            marks = input.nextInt();
+
+            if (marks >= 80 && marks <= 100) {
+                grade = "A";
+            } else if (marks >= 60 && marks <= 79) {
+                grade = "B";
+            } else if (marks >= 50 && marks <= 59) {
+                grade = "C";
+            } else if (marks >= 40 && marks <= 49) {
+                grade = "D";
+            } else if (marks >= 0 && marks <= 39){
+                grade = "F";
+            } else {
+                System.out.println("Invalid marks!");
+            }
 
             // Find the grade point based on grades
-            if (grade.equals("A")) {
-                totalpoint += (4.0 * 3);
-            } else if (grade.equals("B")) {
-                totalpoint += (3.0 * 3);
-            } else if (grade.equals("C")) {
-                totalpoint += (2.0 * 3);
-            } else if (grade.equals("D")) {
-                totalpoint += (1.0 * 3);
-            } else {
-                totalpoint += 0;
+            switch (grade) {
+                case "A":
+                    totalpoint += (4.0 * 3);
+                    break;
+                case "B":
+                    totalpoint += (3.0 * 3);
+                    break;
+                case "C":
+                    totalpoint += (2.0 * 3);
+                    break;
+                case "D":
+                    totalpoint += (1.0 * 3);
+                    break;
+                default:
+                    totalpoint += 0;
+
             }
+//            if (grade.equals("A")) {
+//                totalpoint += (4.0 * 3);
+//            } else if (grade.equals("B")) {
+//                totalpoint += (3.0 * 3);
+//            } else if (grade.equals("C")) {
+//                totalpoint += (2.0 * 3);
+//            } else if (grade.equals("D")) {
+//                totalpoint += (1.0 * 3);
+//            } else {
+//                totalpoint += 0;
+//            }
         }
 
         // Find the average of the grade point, which is the GPA
-        gpa = totalpoint / (subjects.size()*3);
+        this.gpa = totalpoint / (subjects.size()*3);
 
         // Display the GPA
-        System.out.println(name + "'s GPA is " + gpa);
+        System.out.println(name + "'s GPA is " + String.format("%.2f", this.gpa));
     }
 
     // Find the average of all GPA that you have received so far
     public void calcCGPA() {
         Scanner input = new Scanner(System.in);
         int sem;
-        double gpa = 0.0;
-        double cgpa = 0.0;
+        double totalgpa = 0.0;
 
         // Prompt user how many semesters have they passed?
         System.out.println("Hello, how many semesters have you passed? ");
@@ -148,13 +205,21 @@ public class Student {
         // For each semester, prompt user the GPA that they have received?
         for(int i = 0; i < sem; i++) {
             System.out.println("What is your GPA for Sem " + (i+1) + "? ");
-            gpa += input.nextDouble();
+            totalgpa += input.nextDouble();
         }
 
         // Find the average of the GPA, which is the CGPA
-        cgpa = gpa / sem;
+        this.cgpa = totalgpa / sem;
 
         // Display the CGPA
-        System.out.println(name + "'s CGPA is " + String.format("%.2f", cgpa));
+        System.out.println(name + "'s CGPA is " + String.format("%.2f", this.cgpa));
+    }
+
+    @Override
+    public String toString() {
+        return "Student ID: " + id +
+                "\nName: " + name +
+                "\nProgramme: " + programme +
+                "\nSubjects: " + subjects;
     }
 }

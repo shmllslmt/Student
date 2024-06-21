@@ -7,7 +7,7 @@ public class Main {
         kuzibin.setProgramme("Diploma in Information Technology");
 
         // Function call to the introduce method
-        kuzibin.introduce();
+//        kuzibin.introduce();
 
         // Add course to the subjects ArrayList
         kuzibin.enrollCourse("Object-Oriented Programming");
@@ -17,6 +17,8 @@ public class Main {
         // Finding the student's GPA
 //        kuzibin.calcGPA();
         // Finding the student's CGPA
-        kuzibin.calcCGPA();
+//        kuzibin.calcCGPA();
+
+        System.out.println(kuzibin);
     }
 }
