@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
+    // Attributes
     private String id;
     private String name;
     private String phoneNo;
@@ -25,6 +26,7 @@ public class Student {
         this.name = name;
     }
 
+    // Getters
     public String getId() {
         return id;
     }
@@ -53,6 +55,11 @@ public class Student {
         return cgpa;
     }
 
+    public ArrayList<String> getSubjects() {
+        return subjects;
+    }
+
+    // Setters
     public void setId(String id) {
         this.id = id;
     }
@@ -95,10 +102,6 @@ public class Student {
         subjects.remove(subject);
     }
 
-    public ArrayList<String> getSubjects() {
-        return subjects;
-    }
-
     public void calcGPA() {
         Scanner input = new Scanner(System.in);
         String grade;
@@ -106,9 +109,11 @@ public class Student {
         float gpa = 0;
 
         for(String s: subjects) {
+            // Prompt user for the grades that they received for each subjects
             System.out.println("What is the grade that you received for " + s + "?");
             grade = input.next();
 
+            // Find the grade point based on grades
             if (grade.equals("A")) {
                 totalpoint += (4.0 * 3);
             } else if (grade.equals("B")) {
@@ -122,8 +127,10 @@ public class Student {
             }
         }
 
+        // Find the average of the grade point, which is the GPA
         gpa = totalpoint / (subjects.size()*3);
 
+        // Display the GPA
         System.out.println(name + "'s GPA is " + gpa);
     }
 
@@ -134,16 +141,20 @@ public class Student {
         double gpa = 0.0;
         double cgpa = 0.0;
 
-        // Prompt user how many semesters have they passed? 6
+        // Prompt user how many semesters have they passed?
         System.out.println("Hello, how many semesters have you passed? ");
         sem = input.nextInt();
 
+        // For each semester, prompt user the GPA that they have received?
         for(int i = 0; i < sem; i++) {
             System.out.println("What is your GPA for Sem " + (i+1) + "? ");
             gpa += input.nextDouble();
         }
+
+        // Find the average of the GPA, which is the CGPA
         cgpa = gpa / sem;
 
+        // Display the CGPA
         System.out.println(name + "'s CGPA is " + String.format("%.2f", cgpa));
     }
 }

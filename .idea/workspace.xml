@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2a35fd8-c8ef-4d9a-8025-e9d9322078a8" name="Changes" comment="calcGPA">
+    <list default="true" id="d2a35fd8-c8ef-4d9a-8025-e9d9322078a8" name="Changes" comment="calcCGPA">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student.java" afterDir="false" />
@@ -98,7 +98,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718675616632</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="calcCGPA">
+      <option name="closed" value="true" />
+      <created>1718937974689</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718937974689</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Get/Set" />
     <MESSAGE value="calcGPA" />
-    <option name="LAST_COMMIT_MESSAGE" value="calcGPA" />
+    <MESSAGE value="calcCGPA" />
+    <option name="LAST_COMMIT_MESSAGE" value="calcCGPA" />
   </component>
 </project>
